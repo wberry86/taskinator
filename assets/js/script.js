@@ -245,6 +245,7 @@ var loadTasks = function () {
   if (!savedTasks) {  
     return false;
   }
+  console.log("Saved tasks found!")
 
   savedTasks = JSON.parse(savedTasks);
   
@@ -252,16 +253,19 @@ var loadTasks = function () {
   for (var i = 0; i < savedTasks.length; i++) {
     // pass each task object into the `createTaskEl()` function
     createTaskEl(savedTasks[i]);
-    console.log(tasks[i])
+    
   }
 
 
 };
 
 formEl.addEventListener("submit", taskFormHandler);
+
 pageContentEl.addEventListener("click", taskButtonHandler);
+
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
-console.log(loadTasks());
+
+loadTasks();
 
 
 
